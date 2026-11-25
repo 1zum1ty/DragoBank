@@ -1,0 +1,11 @@
+economy:
+  currency-name: "DragoCoin"
+  currency-symbol: "$"
+  starting-balance: 1000
+
+moneydrop:
+  enabled: true
+  include-sender: false
+
+messages:
+  prefix: "&6[DragoBank] &r"

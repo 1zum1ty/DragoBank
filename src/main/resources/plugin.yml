@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=none
+name: DragoBank
+version: '1.0.0'
+main: de.dragobank.DragoBank
+api-version: '26.3'
+description: Izu economy plugin for Paper.
+libraries:
+  - org.xerial:sqlite-jdbc:3.50.3.0
+
+commands:
+  bank:
+    description: Main DragoBank command
+    usage: /bank
+
+  balance:
+    description: Display your balance
+    aliases: [bal]
+
+  pay:
+    description: Transfer money to another player
+    usage: /pay <player> <amount>
+
+  moneydrop:
+    description: Distribute money among online players
+    usage: /moneydrop <amount>
+
+permissions:
+  dragobank.balance:
+    default: true
+
+  dragobank.pay:
+    default: true
+
+  dragobank.moneydrop:
+    default: true
+
+  dragobank.admin.*:
+    default: op
+    children:
+      dragobank.admin.balance: true
+      dragobank.admin.add: true
+      dragobank.admin.remove: true
+      dragobank.admin.set: true
+      dragobank.admin.reload: true
+
+  dragobank.admin.balance:
+    default: op
+
+  dragobank.admin.add:
+    default: op
+
+  dragobank.admin.remove:
+    default: op
+
+  dragobank.admin.set:
+    default: op
+
+  dragobank.admin.reload:
+    default: op
